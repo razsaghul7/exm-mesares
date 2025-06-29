@@ -44,22 +44,3 @@
 | Code Smells | 1 | A |
 | Cobertura | 80.7% | A |
 | Código Duplicado | 1.6% | A |
-
-## Problemas Encontrados
-
-### Code Smells (3)
-
-1. **Método muy largo** - El método `OrderServiceImpl.createOrder()` tiene 35 líneas cuando el máximo recomendado es 30
-2. **Complejidad Cognitiva alta** - `ProductController.searchProducts()` tiene complejidad 6 (máximo recomendado: 5)
-3. **Método sin usar** - `OrderServiceImpl.validateStock()` está definido pero no se usa en ninguna parte
-
-## Cosas que podría mejorar
-
-1. Dividir el método `createOrder()` en métodos más pequeños
-2. Simplificar los if/else en `searchProducts()`
-3. Borrar o usar el método `validateStock()`
-
-## Conclusión
-
-El proyecto está bastante bien estructurado y tiene buena calidad de código. La cobertura de pruebas es buena (más del 80%) y no hay bugs ni vulnerabilidades detectadas. Los pocos problemas encontrados son menores y fáciles de solucionar.
- 
