@@ -62,5 +62,4 @@
 ## Conclusión
 
 El proyecto está bastante bien estructurado y tiene buena calidad de código. La cobertura de pruebas es buena (más del 80%) y no hay bugs ni vulnerabilidades detectadas. Los pocos problemas encontrados son menores y fáciles de solucionar.
-
-Para un proyecto académico, estos resultados son muy buenos y demuestran buenas prácticas de programación. Los patrones de diseño implementados (Builder y Circuit Breaker) también contribuyen a la buena calificación de mantenibilidad. 
+ 
