@@ -1,0 +1,238 @@
+{
+  "info": {
+    "_postman_id": "b2c3d4e5-f6g7-8901-hijk-lm2345678901",
+    "name": "Orders Microservice",
+    "description": "API endpoints for the Orders microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"customer\": \"John Doe\",\n    \"items\": [\n        {\n            \"productId\": 1,\n            \"quantity\": 2\n        },\n        {\n            \"productId\": 2,\n            \"quantity\": 1\n        }\n    ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "orders"
+          ]
+        },
+        "description": "Create a new order with multiple products"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Orders",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/orders?page=0&size=10&sort=date,desc",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "orders"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            },
+            {
+              "key": "sort",
+              "value": "date,desc"
+            }
+          ]
+        },
+        "description": "Get all orders with pagination"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Order by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/orders/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "orders",
+            "1"
+          ]
+        },
+        "description": "Get an order by its ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Search Orders by Customer",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/orders/search?customer=John&page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "orders",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "customer",
+              "value": "John"
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Search orders by customer name (partial match)"
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Orders by Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/orders/search?status=PENDING&page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "orders",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "PENDING"
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Filter orders by status"
+      },
+      "response": []
+    },
+    {
+      "name": "Filter Orders by Customer and Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/orders/search?customer=John&status=PENDING&page=0&size=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "orders",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "customer",
+              "value": "John"
+            },
+            {
+              "key": "status",
+              "value": "PENDING"
+            },
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        },
+        "description": "Filter orders by customer name and status"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Order Status",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/orders/1/status?status=SHIPPED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "orders",
+            "1",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "SHIPPED"
+            }
+          ]
+        },
+        "description": "Update the status of an order"
+      },
+      "response": []
+    }
+  ]
+} 
